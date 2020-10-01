@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Claims\Services\Xsl\FormDocument-To-FoXml.xslt" />
+    <None Remove="Claims\Services\Xsl\X12-837-To-ClaimDocument.xslt" />
+    <None Remove="Eligibility\Services\Xsl\BenefitResponse-To-Html.xslt" />
+    <None Remove="Eligibility\Services\Xsl\X12-271-To-BenefitResponse.xslt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Claims\Services\Xsl\FormDocument-To-FoXml.xslt" />
+    <EmbeddedResource Include="Claims\Services\Xsl\X12-837-To-ClaimDocument.xslt">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eligibility\Services\Xsl\BenefitResponse-To-Html.xslt" />
+    <EmbeddedResource Include="Eligibility\Services\Xsl\X12-271-To-BenefitResponse.xslt">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\X12.Core\X12.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ClaimDocument.xsd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
+</Project>
