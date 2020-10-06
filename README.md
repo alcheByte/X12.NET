@@ -1,4 +1,6 @@
-# X12Parser
+# X12.NET
+
+This is a .Net Core port of X12Parser, whose readme follows-
 
 This is an open source .NET C# implementation of an X12 Parser.
 
